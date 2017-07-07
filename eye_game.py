@@ -30,21 +30,7 @@ class EyeGamePage:
     def get_to_level(self, level):
         for i in range(level.value):
             self.click_chosen_one()
-        WebDriverWait(self.driver, 20).until(EC.invisibility_of_element_located((By.ID, "timeleft")), message='Timer still Visible')
+        WebDriverWait(self.driver, 20).until(EC.invisibility_of_element_located((By.ID, "timeleft")))
 
-    def check_level_reached(self, level):
-        assert self.driver.find_element_by_css_selector('.character-title').text == level.name
-
-    def check_robot_level_reached(self, level):
-        check_level_reached(level.value)
-
-
-    def get_to_robot_level(self):
-        self.get_to_level(self.ROBOT)
-
-    def get_to_jastrzab_level(self):
-        self.get_to_level(self.JASTRZAB)
-
-
-    def get_reached_level(self):
-        return self.driver.find_element_by_css_selector('.character-title').text
+    def check_level_reached(self,level : Level):
+       pass
