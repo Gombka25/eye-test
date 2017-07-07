@@ -7,4 +7,4 @@ def test_kret_level():
     eye_game = EyeGamePage(driver)
     eye_game.load()
     eye_game.get_to_robot_level()
-    assert eye_game.get_reached_level() == 'robot'
+    eye_game.check_level_reached()
